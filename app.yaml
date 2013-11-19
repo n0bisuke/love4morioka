@@ -1,0 +1,22 @@
+application: love4morioka
+version: 1
+runtime: php
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: favicon.ico
+  upload: favicon\.ico
+
+#twitter投稿のテスト
+- url: /tweet.*
+  script: tweet/tweet.php
+
+#DB接続テスト
+- url: /connect.*
+  script: dbtest/index.php
+
+
+- url: .*
+  script: main.php
